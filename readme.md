@@ -40,10 +40,7 @@ bootstrap.bundle.min.js
 README.md                           
 .gitignore
 
-Ссылка на опубликованную версию
 Репозиторий: https://github.com/cxlevi/kr2-bootstrap-shop
-Как запустить проект локально
-Клонируйте репозиторий: git clone https://github.com/cxlevi/kr2-bootstrap-shop
 
 Автор
 ФИО: Золин Никита
