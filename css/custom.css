@@ -1,0 +1,105 @@
+/* ========================================
+   1. ОБЩИЕ СТИЛИ: ПРИЖАТИЕ FOOTER К НИЗУ
+   ======================================== */
+html {
+  scroll-behavior: smooth; /* Плавная прокрутка к якорям */
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Минимальная высота = 100% высоты экрана */
+}
+
+main {
+  flex-grow: 1; /* Растягивает main, толкая footer вниз */
+}
+
+/* ========================================
+   2. СТРАНИЦА ТОВАРА: ИЗОБРАЖЕНИЕ
+   ======================================== */
+.product-image {
+  max-width: 400px;       /* Не шире 400px на больших экранах */
+  width: 100%;            /* На мобильных занимает всю доступную ширину */
+  max-height: 400px;      /* Не выше 400px */
+  height: auto;           /* Высота подстраивается автоматически, сохраняя пропорции */
+  object-fit: contain;    /* Гарантирует, что картинка не обрежется и не исказится */
+  display: block;         /* Убирает лишний отступ снизу, который бывает у inline-элементов */
+}
+/* ========================================
+   3. УЛУЧШЕНИЕ КОМПОНЕНТОВ BOOTSTRAP
+   ======================================== */
+/* Плавная анимация при наведении на карточки товаров */
+.card {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
+}
+
+/* Делаем бейдж (badge) чуть более читаемым */
+.badge {
+  font-weight: 500;
+  letter-spacing: 0.5px;
+}
+
+/* Фирменный градиент для hero-блока (используется на главной) */
+.hero-section {
+  background: linear-gradient(135deg, #0d6efd 0%, #0a58ca 100%);
+  color: white;
+}
+
+/* ========================================
+   4. СТРАНИЦА ЗАКАЗА (order.html)
+   ======================================== */
+/* Сводка заказа: липкий блок справа */
+.order-summary {
+  position: sticky;
+  top: 90px; /* Отступ сверху с учетом высоты navbar (sticky-top) */
+}
+
+.order-summary .list-group-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Кастомный градиент для шапки формы заказа */
+.order-header {
+  background: linear-gradient(135deg, #0d6efd 0%, #6610f2 100%);
+  color: white;
+  border-radius: 0.5rem;
+}
+
+/* ========================================
+   5. АНИМАЦИИ И ВАЛИДАЦИЯ ФОРМ
+   ======================================== */
+/* Анимация появления toast-уведомления */
+.toast.show {
+  animation: slideIn 0.3s ease-out;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* Усиление стандартных стилей валидации Bootstrap */
+.form-control.is-valid,
+.form-select.is-valid {
+  border-color: #198754;
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3e%3cpath fill='%23198754' d='M2.3 6.73L.6 4.53c-.4-1.04.46-1.4 1.1-.8l1.1 1.4 3.4-3.8c.6-.63 1.6-.27 1.2.7l-4 4.6c-.43.5-.8.4-1.1.1z'/%3e%3c/svg%3e");
+}
+
+.form-control.is-invalid,
+.form-select.is-invalid {
+  border-color: #dc3545;
+}

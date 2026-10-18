@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Оформление заказа в интернет-магазине TechStore">
+  <title>Оформление заказа — TechStore</title>
+  
+  <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/custom.css">
+</head>
+<body>
+
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="index.html">TechStore</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Главная</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="catalog.html">Каталог</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="order.html">Заказ</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="product.html">Товар</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <main class="py-5">
+    <div class="container">
+      <nav aria-label="breadcrumb" class="mb-4">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="index.html">Главная</a></li>
+          <li class="breadcrumb-item active" aria-current="page">Оформление заказа</li>
+        </ol>
+      </nav>
+
+      <div class="order-header p-4 mb-4">
+        <h1 class="mb-2">Оформление заказа</h1>
+        <p class="mb-0 opacity-75">Заполните форму, и менеджер свяжется с вами в течение 15 минут</p>
+      </div>
+
+      <div class="row g-4">
+        <div class="col-lg-8">
+          <form id="orderForm" class="needs-validation" novalidate>
+            
+            <div class="card mb-4">
+              <div class="card-header bg-white">
+                <h3 class="mb-0 fs-5">Контактные данные</h3>
+              </div>
+              <div class="card-body">
+                
+                <div class="form-floating mb-3">
+                  <input type="text" class="form-control" id="orderName" name="name" placeholder="Иван Иванов" required>
+                  <label for="orderName">Ваше имя *</label>
+                  <div class="invalid-feedback">Пожалуйста, укажите ваше имя.</div>
+                </div>
+
+                <div class="form-floating mb-3">
+                  <input type="email" class="form-control" id="orderEmail" name="email" placeholder="example@mail.com" required>
+                  <label for="orderEmail">E-mail *</label>
+                  <div class="invalid-feedback">Укажите корректный e-mail.</div>
+                </div>
+
+                <div class="mb-3">
+                  <label for="orderPhone" class="form-label">Телефон *</label>
+                  <div class="input-group">
+                    <span class="input-group-text">+7</span>
+                    <input type="tel" class="form-control" id="orderPhone" name="phone" placeholder="(999) 000-00-00" required>
+                    <div class="invalid-feedback">Укажите номер телефона.</div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
+            <div class="card mb-4">
+              <div class="card-header bg-white">
+                <h3 class="mb-0 fs-5"> Информация о заказе</h3>
+              </div>
+              <div class="card-body">
+                
+                <div class="mb-3">
+                  <label for="orderProduct" class="form-label">Выберите товар *</label>
+                  <select class="form-select" id="orderProduct" name="product" required>
+                    <option value="" selected disabled>— Выберите из списка —</option>
+                    <option value="smartphone">Смартфон Pro X — 59 990 ₽</option>
+                    <option value="laptop">Ноутбук Ultra 15 — 89 990 ₽</option>
+                    <option value="headphones">Наушники Sound Max — 12 490 ₽</option>
+                    <option value="watch">Смарт-часы Fit Pro — 15 990 ₽</option>
+                    <option value="tablet">Планшет Air Tab — 24 990 ₽</option>
+                  </select>
+                  <div class="invalid-feedback">Пожалуйста, выберите товар.</div>
+                </div>
+                <div class="mb-3">
+                  <label for="orderQuantity" class="form-label">Количество</label>
+                  <div class="input-group" style="max-width: 200px;">
+                    <button type="button" class="btn btn-outline-secondary" id="qtyMinus">−</button>
+                    <input type="number" class="form-control text-center" id="orderQuantity" name="quantity" value="0" min="0" max="10">
+                    <button type="button" class="btn btn-outline-secondary" id="qtyPlus">+</button>
+                  </div>
+                </div>
+
+                <div class="form-floating mb-3">
+                  <textarea class="form-control" id="orderComment" name="comment" placeholder="Комментарий" style="height: 120px"></textarea>
+                  <label for="orderComment">Комментарий к заказу</label>
+                </div>
+
+              </div>
+            </div>
+
+            <div class="card mb-4">
+              <div class="card-body">
+
+                <div class="form-check mb-3">
+                  <input class="form-check-input" type="checkbox" id="orderConsent" name="consent" required>
+                  <label class="form-check-label" for="orderConsent">
+                    Я даю согласие на обработку моих персональных данных в соответствии с 
+                    <a href="#" class="text-decoration-none">политикой конфиденциальности</a> *
+                  </label>
+                  <div class="invalid-feedback">Необходимо дать согласие на обработку данных.</div>
+                </div>
+
+                <div class="form-check mb-4">
+                  <input class="form-check-input" type="checkbox" id="orderNewsletter" name="newsletter">
+                  <label class="form-check-label" for="orderNewsletter">
+                    Хочу получать новости об акциях и скидках
+                  </label>
+                </div>
+
+                <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                  <button type="reset" class="btn btn-outline-secondary me-md-2">Очистить форму</button>
+                  <button type="submit" class="btn btn-primary btn-lg px-5">
+                    Оформить заказ
+                  </button>
+                </div>
+
+              </div>
+            </div>
+
+          </form>
+        </div>
+
+        <div class="col-lg-4">
+          <div class="order-summary">
+            <div class="card shadow-sm">
+              <div class="card-header bg-primary text-white">
+                <h3 class="mb-0 fs-5">Ваш заказ</h3>
+              </div>
+              <div class="card-body">
+                <ul class="list-group list-group-flush mb-3">
+                  <li class="list-group-item">
+                    <span>Товар:</span>
+                    <strong class="text-primary" id="summaryProduct">Не выбран</strong>
+                  </li>
+                  <li class="list-group-item">
+                    <span>Количество:</span>
+                    <strong id="summaryQuantity">0 шт.</strong>
+                  </li>
+                  <li class="list-group-item">
+                    <span>Доставка:</span>
+                    <strong class="text-success">Бесплатно</strong>
+                  </li>
+                </ul>
+                <hr>
+                <div class="d-flex justify-content-between align-items-center">
+                  <span class="fs-5">Итого:</span>
+                  <span class="fs-4 fw-bold text-primary" id="summaryTotal">0 ₽</span>
+                </div>
+              </div>
+              <div class="card-footer bg-light">
+                <small class="text-muted">
+                 Ваши данные защищены и не передаются третьим лицам
+                </small>
+              </div>
+            </div>
+
+            <div class="alert alert-info mt-3" role="alert">
+              <h6 class="alert-heading">Способы оплаты</h6>
+              <ul class="mb-0 small">
+                <li>Банковская карта</li>
+                <li>Наличные при получении</li>
+                <li>Рассрочка 0%</li>
+                <li>Apple Pay / Google Pay</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <div class="modal fade" id="confirmModal" tabindex="-1" aria-labelledby="confirmModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header bg-success text-white">
+          <h5 class="modal-title" id="confirmModalLabel">Заказ оформлен!</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Закрыть"></button>
+        </div>
+        <div class="modal-body">
+          <p>Спасибо за ваш заказ, <strong id="modalUserName">покупатель</strong>!</p>
+          <p class="mb-0">Менеджер свяжется с вами по телефону <strong id="modalUserPhone"></strong> в течение 15 минут для подтверждения.</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Закрыть</button>
+          <a href="catalog.html" class="btn btn-primary">Продолжить покупки</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="toast-container position-fixed bottom-0 end-0 p-3">
+    <div id="successToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+      <div class="toast-header bg-success text-white">
+        <strong class="me-auto">TechStore</strong>
+        <small>только что</small>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="toast" aria-label="Закрыть"></button>
+      </div>
+      <div class="toast-body">
+        Ваш заказ успешно оформлен! Проверьте почту.
+      </div>
+    </div>
+  </div>
+
+  <footer class="bg-dark text-white py-4 mt-5">
+    <div class="container text-center">
+      <p class="mb-0">&copy; 2026 TechStore. Все права защищены.</p>
+    </div>
+  </footer>
+
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  
+  <script>
+    const prices = {
+      'smartphone': 59990,
+      'laptop': 89990,
+      'headphones': 12490,
+      'watch': 15990,
+      'tablet': 24990
+    };
+
+    const productNames = {
+      'smartphone': 'Смартфон Pro X',
+      'laptop': 'Ноутбук Ultra 15',
+      'headphones': 'Наушники Sound Max',
+      'watch': 'Смарт-часы Fit Pro',
+      'tablet': 'Планшет Air Tab'
+    };
+
+    function updateSummary() {
+      const product = document.getElementById('orderProduct').value;
+      const quantity = parseInt(document.getElementById('orderQuantity').value) || 1;
+      
+      const summaryProduct = document.getElementById('summaryProduct');
+      const summaryQuantity = document.getElementById('summaryQuantity');
+      const summaryTotal = document.getElementById('summaryTotal');
+      
+      if (product && prices[product]) {
+        summaryProduct.textContent = productNames[product];
+        summaryQuantity.textContent = quantity + ' шт.';
+        const total = prices[product] * quantity;
+        summaryTotal.textContent = total.toLocaleString('ru-RU') + ' ₽';
+      } else {
+        summaryProduct.textContent = 'Не выбран';
+        summaryQuantity.textContent = '0 шт.';
+        summaryTotal.textContent = '0 ₽';
+      }
+    }
+
+    document.getElementById('orderProduct').addEventListener('change', updateSummary);
+    document.getElementById('orderQuantity').addEventListener('input', updateSummary);
+
+    document.getElementById('qtyPlus').addEventListener('click', () => {
+      const qty = document.getElementById('orderQuantity');
+      if (parseInt(qty.value) < 10) {
+        qty.value = parseInt(qty.value) + 1;
+        updateSummary();
+      }
+    });
+
+    document.getElementById('qtyMinus').addEventListener('click', () => {
+      const qty = document.getElementById('orderQuantity');
+      if (parseInt(qty.value) > 1) {
+        qty.value = parseInt(qty.value) - 1;
+        updateSummary();
+      }
+    });
+
+    const form = document.getElementById('orderForm');
+    form.addEventListener('submit', function(event) {
+      event.preventDefault();
+      event.stopPropagation();
+      
+      if (form.checkValidity()) {
+        const toast = new bootstrap.Toast(document.getElementById('successToast'));
+        toast.show();
+
+        document.getElementById('modalUserName').textContent = document.getElementById('orderName').value;
+        document.getElementById('modalUserPhone').textContent = '+7 ' + document.getElementById('orderPhone').value;
+        
+        const modal = new bootstrap.Modal(document.getElementById('confirmModal'));
+        modal.show();
+        
+        form.classList.remove('was-validated');
+      } else {
+        form.classList.add('was-validated');
+      }
+    });
+  </script>
+</body>
+</html>

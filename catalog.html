@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Каталог электроники TechStore">
+  <title>Каталог — TechStore</title>
+
+  <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/custom.css">
+</head>
+<body>
+
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="index.html">TechStore</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Главная</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="catalog.html">Каталог</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="order.html">Заказ</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="product.html">Товар</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <main class="py-5">
+    <div class="container">
+      <h1 class="mb-4">Каталог электроники</h1>
+      
+      <div class="row g-4">
+
+        <aside class="col-lg-3">
+          <div class="accordion" id="filterAccordion">
+
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseCategory">
+                  Категория
+                </button>
+              </h2>
+              <div id="collapseCategory" class="accordion-collapse collapse show" data-bs-parent="#filterAccordion">
+                <div class="accordion-body">
+                  <div class="form-check mb-2">
+                    <input class="form-check-input" type="checkbox" id="catPhone" checked>
+                    <label class="form-check-label" for="catPhone">Смартфоны</label>
+                  </div>
+                  <div class="form-check mb-2">
+                    <input class="form-check-input" type="checkbox" id="catLaptop">
+                    <label class="form-check-label" for="catLaptop">Ноутбуки</label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="catAudio">
+                    <label class="form-check-label" for="catAudio">Аудио</label>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseBrand">
+                  Бренд
+                </button>
+              </h2>
+              <div id="collapseBrand" class="accordion-collapse collapse" data-bs-parent="#filterAccordion">
+                <div class="accordion-body">
+                  <div class="form-check mb-2">
+                    <input class="form-check-input" type="checkbox" id="brandApple">
+                    <label class="form-check-label" for="brandApple">Apple</label>
+                  </div>
+                  <div class="form-check mb-2">
+                    <input class="form-check-input" type="checkbox" id="brandSamsung">
+                    <label class="form-check-label" for="brandSamsung">Samsung</label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="brandSony">
+                    <label class="form-check-label" for="brandSony">Sony</label>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapsePrice">
+                  Цена, ₽
+                </button>
+              </h2>
+              <div id="collapsePrice" class="accordion-collapse collapse" data-bs-parent="#filterAccordion">
+                <div class="accordion-body">
+                  <div class="input-group mb-3">
+                    <span class="input-group-text">От</span>
+                    <input type="number" class="form-control" placeholder="0">
+                  </div>
+                  <div class="input-group">
+                    <span class="input-group-text">До</span>
+                    <input type="number" class="form-control" placeholder="100000">
+                  </div>
+                  <button class="btn btn-primary w-100 mt-3">Применить</button>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </aside>
+
+        <section class="col-lg-9">
+          <div class="row g-4">
+
+            <div class="col-12 col-md-6 col-xl-4">
+              <div class="card h-100 shadow-sm">
+                <span class="badge bg-danger position-absolute top-0 end-0 m-2">Хит</span>
+                <div class="card-body d-flex flex-column">
+                  <h5 class="card-title">Смартфон Pro X</h5>
+                  <p class="card-text text-muted flex-grow-1">Флагманский смартфон с AMOLED-экраном и тройной камерой.</p>
+                  <div class="d-flex justify-content-between align-items-center mt-3">
+                    <span class="fw-bold text-primary fs-5">59 990 ₽</span>
+                    <a href="product.html" class="btn btn-primary">Подробнее</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-12 col-md-6 col-xl-4">
+              <div class="card h-100 shadow-sm">
+                <span class="badge bg-success position-absolute top-0 end-0 m-2">Новинка</span>
+                <div class="card-body d-flex flex-column">
+                  <h5 class="card-title">Ноутбук Ultra 15</h5>
+                  <p class="card-text text-muted flex-grow-1">Мощный ноутбук для работы и игр с процессором нового поколения.</p>
+                  <div class="d-flex justify-content-between align-items-center mt-3">
+                    <span class="fw-bold text-primary fs-5">89 990 ₽</span>
+                    <a href="product.html" class="btn btn-primary">Подробнее</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-12 col-md-6 col-xl-4">
+              <div class="card h-100 shadow-sm">
+                <div class="card-body d-flex flex-column">
+                  <h5 class="card-title">Наушники Sound Max</h5>
+                  <p class="card-text text-muted flex-grow-1">Беспроводные наушники с активным шумоподавлением.</p>
+                  <div class="d-flex justify-content-between align-items-center mt-3">
+                    <span class="fw-bold text-primary fs-5">12 490 ₽</span>
+                    <a href="product.html" class="btn btn-primary">Подробнее</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-12 col-md-6 col-xl-4">
+              <div class="card h-100 shadow-sm">
+                <span class="badge bg-warning text-dark position-absolute top-0 end-0 m-2">-20%</span>
+                <div class="card-body d-flex flex-column">
+                  <h5 class="card-title">Смарт-часы Fit Pro</h5>
+                  <p class="card-text text-muted flex-grow-1">Фитнес-трекер с GPS и мониторингом здоровья 24/7.</p>
+                  <div class="d-flex justify-content-between align-items-center mt-3">
+                    <span class="fw-bold text-primary fs-5">15 990 ₽</span>
+                    <a href="product.html" class="btn btn-primary">Подробнее</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </section>
+      </div>
+    </div>
+  </main>
+
+  <footer class="bg-dark text-white py-4 mt-auto">
+    <div class="container text-center">
+      <p class="mb-0">&copy; 2026 TechStore. Все права защищены.</p>
+    </div>
+  </footer>
+
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
